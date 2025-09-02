@@ -3,7 +3,7 @@
 **Student Name:** [JERIC ROMANCE]
 **Student ID:** [231002222]
 **Section:** [BSCS 3B]
-**Date:** [SEPTEMBER 2, 2025]
+**Date:** [SEPTEMBER 2, 2025   ]
 
 ## Git Configuration
 
@@ -56,7 +56,9 @@
 [Reflect on what you learned about version control, GUI development, and collaborative programming]
 
 ## Screenshots
-
+![personal_info_gui Setup](lab2_screenshots\personal_info_gui.png)
+![List Setup](lab2_screenshots\List_setup.png)
+![hello_flet Setup](lab2_screenshots\hello_flet_output.png)
 ### Git Repository
 - [ ] GitHub repository with commit history
 - [ ] Local git log showing commits
