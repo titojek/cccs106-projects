@@ -49,11 +49,11 @@
 
 ## Challenges and Solutions
 
-[Describe any difficulties you encountered and how you solved them]
+medyo mahirap, buti nalang nagpatulong ako kay deiven
 
 ## Learning Outcomes
 
-[Reflect on what you learned about version control, GUI development, and collaborative programming]
+learned on how to make a repository
 
 ## Screenshots
 
