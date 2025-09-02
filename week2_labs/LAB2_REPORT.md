@@ -56,9 +56,7 @@ medyo mahirap, buti nalang nagpatulong ako kay deiven
 learned on how to make a repository
 
 ## Screenshots
-![personal_info_gui Setup](lab2_screenshots\personal_info_gui.png)
-![List Setup](lab2_screenshots\List_setup.png)
-![hello_flet Setup](lab2_screenshots\hello_flet_output.png)
+
 
 
 ### Git Repository
