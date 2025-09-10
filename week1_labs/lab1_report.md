@@ -1,17 +1,17 @@
-**Student Name:** [JERIC E. ROMANCE]
-**Student ID:** [231002222]
-**Section:** [BSCS_3B]
-**Date:** [september 3, 2025]
+**Student Name:** JERIC E. ROMANCE
+**Student ID:** 231002222
+**Section:** BSCS_3B
+**Date:** September 3, 2025
 
 ## Environment Setup
 
 ### Python Installation
-- **Python Version:** [Python 3.13.5]
-- **Installation Issues:** [Describe any problems and solutions]
+- **Python Version:** Python 3.13.5
+- **Installation Issues:** none
 - **Virtual Environment Created:** ✅ cccs106_env_lastname
 
 ### VS Code Configuration
-- **VS Code Version:** [1.103.2]
+- **VS Code Version:** 1.103.2
 - **Python Extension:** ✅ Installed and configured
 - **Interpreter:** ✅ Set to cccs106_env_lastname/Scripts/python.exe
 
@@ -36,16 +36,16 @@
 ### 1. hello_world.py
 - **Status:** ✅ Completed
 - **Features:** Student info display, age calculation, system info
-- **Notes:** [Any challenges or observations]
+- **Notes:** none
 
 ### 2. basic_calculator.py
 - **Status:** ✅ Completed
 - **Features:** Basic arithmetic, error handling, min/max calculation
-- **Notes:** [Any challenges or observations]
+- **Notes:** none
 
 ## Challenges and Solutions
 
-kalmado lang ya
+kalmado lang po
 
 ## Learning Outcomes
 

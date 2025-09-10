@@ -49,16 +49,14 @@
 
 ## Challenges and Solutions
 
-[Describe any difficulties you encountered and how you solved them]
+medyo mahirap, buti nalang nagpatulong ako kay deiven
 
 ## Learning Outcomes
 
-[Reflect on what you learned about version control, GUI development, and collaborative programming]
+learned on how to make a repository
 
 ## Screenshots
-![personal_info_gui Setup](lab2_screenshots\personal_info_gui.png)
-![List Setup](lab2_screenshots\List_setup.png)
-![hello_flet Setup](lab2_screenshots\hello_flet_output.png)
+
 ### Git Repository
 - [ ] GitHub repository with commit history
 - [ ] Local git log showing commits

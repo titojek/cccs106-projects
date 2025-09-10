@@ -1,7 +1,7 @@
 # hello_world.py
 # CCCS 106 - Week 1 Lab Exercise
-# Student: [JERIC E. ROMANCE]
-# Date: [Sepember 3, 2025]
+# Student: JERIC E. ROMANCE
+# Date: Sepember 3, 2025
 
 print("=" * 50)
 print("CCCS 106: Application Development and Emerging Technologies")
@@ -13,7 +13,7 @@ print("Hello, World!")
 print("Welcome to Python programming!")
 
 # Student information (replace with your details)
-student_name = "YJERIC E. ROMANCE"
+student_name = "JERIC E. ROMANCE"
 student_id = "231002222"
 program = "Bachelor of Science in Computer Science"
 year_level = "3rd Year"
