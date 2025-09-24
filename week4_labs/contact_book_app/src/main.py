@@ -1,58 +1,92 @@
 import flet as ft
 from database import init_db
 from app_logic import display_contacts, add_contact
-
 def main(page: ft.Page):
     page.title = "Contact Book"
     page.vertical_alignment = ft.MainAxisAlignment.START
-    page.window_width = 420
-    page.window_height = 650
+    page.window.width = 420
+    page.window.height = 650
+    page.scroll = ft.ScrollMode.AUTO   
+    page.padding = 20
+
     page.theme_mode = ft.ThemeMode.LIGHT
+
+    def theme_change(e):
+        page.theme_mode = (
+            ft.ThemeMode.DARK if page.theme_mode == ft.ThemeMode.LIGHT else ft.ThemeMode.LIGHT
+        )
+        toggle_label.value = (
+            "Light Mode" if page.theme_mode == ft.ThemeMode.LIGHT else "Dark Mode"
+        )
+        page.update()
 
     db_conn = init_db()
 
-    # Theme switch
-    theme_switch = ft.Switch(label="Dark Mode", value=False)
-    def toggle_theme(e):
-        page.theme_mode = ft.ThemeMode.DARK if theme_switch.value else ft.ThemeMode.LIGHT
-        page.update()
+    name_input = ft.TextField(label="Name", prefix_icon=ft.Icons.PERSON, width=350)
+    phone_input = ft.TextField(label="Phone", prefix_icon=ft.Icons.PHONE, width=350)
+    email_input = ft.TextField(label="Email", prefix_icon=ft.Icons.EMAIL, width=350)
 
-    theme_switch.on_change = toggle_theme
-
-    # Inputs
-    name_input = ft.TextField(label="Name", width=350)
-    phone_input = ft.TextField(label="Phone", width=350)
-    email_input = ft.TextField(label="Email", width=350)
     inputs = (name_input, phone_input, email_input)
-
-    # Search
-    search_input = ft.TextField(label="Search", width=350)
 
     contacts_list_view = ft.ListView(expand=1, spacing=10, auto_scroll=True)
 
     add_button = ft.ElevatedButton(
         text="Add Contact",
-        on_click=lambda e: add_contact(page, inputs, contacts_list_view, db_conn),
+        style=ft.ButtonStyle(shape=ft.RoundedRectangleBorder(radius=12)),
+        on_click=lambda e: add_contact(page, inputs, contacts_list_view, db_conn)
     )
 
-    search_input.on_change = lambda e: display_contacts(page, contacts_list_view, db_conn, e.control.value)
+    search_input = ft.TextField(
+        label="Search",
+        prefix_icon=ft.Icons.SEARCH,
+        on_change=lambda e: display_contacts(page, contacts_list_view, db_conn, search_input.value or ""),
+        width=380,
+    )
+
+    c = ft.Switch(on_change=theme_change)
+    toggle_label = ft.Text("Light Mode", size=14, weight=ft.FontWeight.W_500)
+
+    toggle_row = ft.Row(
+        [toggle_label, ft.Container(content=c, scale=0.9)],
+        alignment=ft.MainAxisAlignment.END,
+        spacing=9
+    )
 
     page.add(
         ft.Column(
             [
-                theme_switch,
-                ft.Text("Enter Contact Details:", size=20, weight=ft.FontWeight.BOLD),
-                name_input,
-                phone_input,
-                email_input,
-                add_button,
-                ft.Divider(),
+                ft.Row(
+                        [
+                            ft.Text("Contact Book", size=25, weight=ft.FontWeight.BOLD, expand=True),
+                            ft.Row([toggle_label, ft.Container(content=c, scale=0.9)], spacing=12)
+                        ],
+                        alignment=ft.MainAxisAlignment.SPACE_BETWEEN,
+                    ),
+                ft.Card(
+                    content=ft.Container(
+                        content=ft.Column(
+                            [
+                                ft.Text("Enter Contact Details:", size=20, weight=ft.FontWeight.BOLD),
+                                name_input,
+                                phone_input,
+                                email_input,
+                                add_button,
+                            ],
+                            spacing=10,
+                        ),
+                        padding=15,
+                    )
+                ),
+
                 search_input,
-                ft.Text("Contacts:", size=20, weight=ft.FontWeight.BOLD),
+
+                ft.Divider(thickness=1),
+                ft.Text("Contacts", size=18, weight=ft.FontWeight.BOLD),
+
                 contacts_list_view,
             ],
-            scroll=ft.ScrollMode.AUTO,
-            expand=True
+            spacing=10,
+            expand=True,
         )
     )
 
